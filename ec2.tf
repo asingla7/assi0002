@@ -54,8 +54,8 @@ resource "aws_key_pair" "k8s" {
   public_key = file("${path.module}/week5.pub")
 }
 
-resource "aws_ecr_repository" "web" {
-  name                 = "web"
+resource "aws_ecr_repository" "akash7webecrrepo" {
+  name                 = "akash7webecrrepo"
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {
@@ -65,8 +65,8 @@ resource "aws_ecr_repository" "web" {
 
 
 
-resource "aws_ecr_repository" "db" {
-  name                 = "db"
+resource "aws_ecr_repository" "akash7dbrepo" {
+  name                 = "akash7dbrepo"
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {
