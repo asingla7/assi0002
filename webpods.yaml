@@ -4,16 +4,16 @@ metadata:
   name: application
 spec:
   containers:
-  - name: websrv-images
+    - name: websrv-images
       image: 294203522159.dkr.ecr.us-east-1.amazonaws.com/akash7webecrrepo:akash0.1
       env:
-    - name: DBPWD
+      - name: DBPWD
         value: asingla7#169498219
-    - name: DBUSER
+      - name: DBUSER
         value: root
-    - name: DBHOST
+      - name: DBHOST
         value: "mysql.database.svc.cluster.local"
-    - name: DBPORT
+      - name: DBPORT
         value: "3306"
       ports:
-      - containerPort: 808
+        - containerPort: 8080
