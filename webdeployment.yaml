@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: application
+  labels:
+    app: employees
+spec:
+  selector:
+    matchLabels:
+      app: employees
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: employees
+    spec:
+      containers:
+      - name: web
+        image: 294203522159.dkr.ecr.us-east-1.amazonaws.com/akash7webecrrepo:akash0.1
+        env:
+        - name: DBPWD
+          value: asingla7#169498219
+        - name: DBUSER
+          value: root
+        - name: DBHOST
+          value: "mysql.database.svc.cluster.local"
+        - name: DBPORT
+          value: "3306"
+        ports:
+        - containerPort: 8080
