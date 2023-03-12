@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: application
+spec:
+  containers:
+    - name: websrv-images
+      image: 294203522159.dkr.ecr.us-east-1.amazonaws.com/akash7webecrrepo:akash0.1
+      env:
+      - name: DBPWD
+        value: asingla7#169498219
+      - name: DBUSER
+        value: root
+      - name: DBHOST
+        value: "mysql.database.svc.cluster.local"
+      - name: DBPORT
+        value: "3306"
+      ports:
+        - containerPort: 8080
